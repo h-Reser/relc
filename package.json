@@ -1,11 +1,11 @@
 {
   "name": "@h-reser/relc",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Runs your app in multiple clusters, and reloads them when they crash",
   "main": "./dist/index.js",
   "types": "./typings/index.d.ts",
   "scripts": {
-    "build": "babel src --out-dir dist -x .js,.ts --source-maps --minified --include-dotfiles --verbose --delete-dir-on-start",
+    "build": "babel src --out-dir dist -x .js,.ts --source-maps --include-dotfiles --verbose --delete-dir-on-start",
     "clean": "rm -rf dist && rm -rf typings",
     "emit-types": "tsc",
     "prepublishOnly": "npm run clean && npm run build && npm run emit-types",
