@@ -1,6 +1,6 @@
 {
   "name": "@h-reser/relc",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Runs your app in multiple clusters, and reloads them when they crash",
   "main": "./dist/index.js",
   "types": "./typings/index.d.ts",
