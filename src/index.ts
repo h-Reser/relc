@@ -171,6 +171,7 @@ export default class Relc {
       isListening.resolve();
     });
     worker.on("online", () => {
+      worker.send("RELC_PID:" + process.pid); // Save PID of main process in process.env of the worker
       if (this.relcOptions.verbose)
         log.success(`worker ${worker.process.pid} is online`);
       isOnline.resolve();
@@ -306,6 +307,13 @@ export default class Relc {
   }
 
   private worker(module: string): Relc {
+    process.on("message", (msg) => {
+      // Save PID of main process in process.env of the worker
+      if (msg.startsWith("RELC_PID:")) {
+        process.env.RELC_PID = msg.substring("RELC_PID:".length);
+      }
+    });
+
     const cwd = this.chokidarOptions.cwd || process.cwd();
     const resolvedPath = path.resolve(cwd, module);
     import(resolvedPath);
