@@ -22,6 +22,7 @@ const options: ReqOptions = {
   ignored: [
     "*.txt",
     "*.js.map",
+    ".git",
     "node_modules"
   ],
   ignoreInitial: true,
