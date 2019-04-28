@@ -23,6 +23,8 @@ const options: ReqOptions = {
     "*.txt",
     "*.js.map",
     ".git",
+    "log",
+    "logs",
     "node_modules"
   ],
   ignoreInitial: true,
